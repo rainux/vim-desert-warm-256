@@ -24,13 +24,13 @@ if version > 580
     " no guarantees for version 5.8 and below, but this makes it stop
     " complaining
     hi clear
-    if exists("syntax_on")
+    if exists('syntax_on')
         syntax reset
     endif
 endif
-let g:colors_name="desert256"
+let g:colors_name='desert256'
 
-if has("gui_running") || &t_Co == 88 || &t_Co == 256
+if has('gui_running') || &t_Co == 88 || &t_Co == 256
     " functions {{{
     " returns an approximate grey index for the given grey level
     fun <SID>grey_number(x)
@@ -219,31 +219,31 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     " returns the palette index to approximate the 'rrggbb' hex string
     fun <SID>rgb(rgb)
-        let l:r = ("0x" . strpart(a:rgb, 0, 2)) + 0
-        let l:g = ("0x" . strpart(a:rgb, 2, 2)) + 0
-        let l:b = ("0x" . strpart(a:rgb, 4, 2)) + 0
+        let l:r = ('0x' . strpart(a:rgb, 0, 2)) + 0
+        let l:g = ('0x' . strpart(a:rgb, 2, 2)) + 0
+        let l:b = ('0x' . strpart(a:rgb, 4, 2)) + 0
 
         return <SID>color(l:r, l:g, l:b)
     endfun
 
     " sets the highlighting for the given group
     fun <SID>X(group, fg, bg, attr)
-        if a:fg != ""
-            exec "hi " . a:group . " guifg=#" . a:fg . " ctermfg=" . <SID>rgb(a:fg)
+        if a:fg != ''
+            exec 'hi ' . a:group . ' guifg=#' . a:fg . ' ctermfg=' . <SID>rgb(a:fg)
         endif
-        if a:bg != ""
-            exec "hi " . a:group . " guibg=#" . a:bg . " ctermbg=" . <SID>rgb(a:bg)
+        if a:bg != ''
+            exec 'hi ' . a:group . ' guibg=#' . a:bg . ' ctermbg=' . <SID>rgb(a:bg)
         endif
-        if a:attr != ""
-            exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+        if a:attr != ''
+            exec 'hi ' . a:group . ' gui=' . a:attr . ' cterm=' . a:attr
         endif
     endfun
     " }}}
 
-    call <SID>X("Normal", "cccccc", "000000", "")
+    call <SID>X('Normal', 'cccccc', '000000', '')
 
     " highlight groups
-    call <SID>X("Cursor", "708090", "f0e68c", "")
+    call <SID>X('Cursor', '708090', 'f0e68c', '')
     "CursorIM
     "Directory
     "DiffAdd
@@ -251,40 +251,40 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "DiffDelete
     "DiffText
     "ErrorMsg
-    call <SID>X("VertSplit", "c2bfa5", "7f7f7f", "reverse")
-    call <SID>X("Folded", "ffd700", "4d4d4d", "")
-    call <SID>X("FoldColumn", "d2b48c", "4d4d4d", "")
-    call <SID>X("IncSearch", "708090", "f0e68c", "")
+    call <SID>X('VertSplit', 'c2bfa5', '7f7f7f', 'reverse')
+    call <SID>X('Folded', 'ffd700', '4d4d4d', '')
+    call <SID>X('FoldColumn', 'd2b48c', '4d4d4d', '')
+    call <SID>X('IncSearch', '708090', 'f0e68c', '')
     "LineNr
-    call <SID>X("ModeMsg", "daa520", "", "")
-    call <SID>X("MoreMsg", "2e8b57", "", "")
-    call <SID>X("NonText", "addbe7", "000000", "bold")
-    call <SID>X("Question", "00ff7f", "", "")
-    call <SID>X("Search", "f5deb3", "cd853f", "")
-    call <SID>X("SpecialKey", "9acd32", "", "")
-    call <SID>X("StatusLine", "c2bfa5", "000000", "reverse")
-    call <SID>X("StatusLineNC", "c2bfa5", "7f7f7f", "reverse")
-    call <SID>X("Title", "cd5c5c", "", "")
-    call <SID>X("Visual", "6b8e23", "f0e68c", "reverse")
+    call <SID>X('ModeMsg', 'daa520', '', '')
+    call <SID>X('MoreMsg', '2e8b57', '', '')
+    call <SID>X('NonText', 'addbe7', '000000', 'bold')
+    call <SID>X('Question', '00ff7f', '', '')
+    call <SID>X('Search', 'f5deb3', 'cd853f', '')
+    call <SID>X('SpecialKey', '9acd32', '', '')
+    call <SID>X('StatusLine', 'c2bfa5', '000000', 'reverse')
+    call <SID>X('StatusLineNC', 'c2bfa5', '7f7f7f', 'reverse')
+    call <SID>X('Title', 'cd5c5c', '', '')
+    call <SID>X('Visual', '6b8e23', 'f0e68c', 'reverse')
     "VisualNOS
-    call <SID>X("WarningMsg", "fa8072", "", "")
+    call <SID>X('WarningMsg', 'fa8072', '', '')
     "WildMenu
     "Menu
     "Scrollbar
     "Tooltip
 
     " syntax highlighting groups
-    call <SID>X("Comment", "87ceeb", "", "")
-    call <SID>X("Constant", "ffa0a0", "", "")
-    call <SID>X("Identifier", "98fb98", "", "none")
-    call <SID>X("Statement", "f0e68c", "", "bold")
-    call <SID>X("PreProc", "cd5c5c", "", "")
-    call <SID>X("Type", "bdb76b", "", "bold")
-    call <SID>X("Special", "ffdead", "", "")
+    call <SID>X('Comment', '87ceeb', '', '')
+    call <SID>X('Constant', 'ffa0a0', '', '')
+    call <SID>X('Identifier', '98fb98', '', 'none')
+    call <SID>X('Statement', 'f0e68c', '', 'bold')
+    call <SID>X('PreProc', 'cd5c5c', '', '')
+    call <SID>X('Type', 'bdb76b', '', 'bold')
+    call <SID>X('Special', 'ffdead', '', '')
     "Underlined
-    call <SID>X("Ignore", "666666", "", "")
+    call <SID>X('Ignore', '666666', '', '')
     "Error
-    call <SID>X("Todo", "ff4500", "eeee00", "")
+    call <SID>X('Todo', 'ff4500', 'eeee00', '')
 
     " delete functions {{{
     delf <SID>X
