@@ -1,5 +1,6 @@
 " Vim color file
-" Maintainer: Henry So, Jr. <henryso@panix.com>
+" Original Author: Henry So, Jr. <henryso@panix.com>
+" Maintainer: Rainux Luo <rainux@gmail.com>
 
 " These are the colors of the "desert" theme by Hans Fugal with a few small
 " modifications (namely that I lowered the intensity of the normal white and
@@ -15,9 +16,9 @@
 " readability) are calibrated to the colors used for Thomas E. Dickey's xterm
 " (version 200), which is available at http://dickey.his.com/xterm/xterm.html.
 "
-" I struggled with trying to parse the rgb.txt file to avoid the necessity of
-" converting color names to #rrggbb form, but decided it was just not worth
-" the effort.  Maybe someone seeing this may decide otherwise...
+" Support rgb color names from rgb.txt file. Use a Ruby script to pre-parse
+" rgb.txt then convert color names mapping to a Vim dictionary, store it in
+" rgb_colors file.
 
 set background=dark
 if version > 580
@@ -29,6 +30,8 @@ if version > 580
     endif
 endif
 let g:colors_name='desert256'
+
+exec 'source ' . expand('<sfile>:p:h') . '/rgb_colors'
 
 if has('gui_running') || &t_Co == 88 || &t_Co == 256
     " functions {{{
@@ -229,10 +232,14 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
     " sets the highlighting for the given group
     fun <SID>X(group, fg, bg, attr)
         if a:fg != ''
-            exec 'hi ' . a:group . ' guifg=#' . a:fg . ' ctermfg=' . <SID>rgb(a:fg)
+            let fg = tolower(a:fg)
+            let fg_hex = has_key(g:rgb_colors, fg) ? g:rgb_colors[fg] : a:fg
+            exec 'hi ' . a:group . ' guifg=#' . fg_hex . ' ctermfg=' . <SID>rgb(fg_hex)
         endif
         if a:bg != ''
-            exec 'hi ' . a:group . ' guibg=#' . a:bg . ' ctermbg=' . <SID>rgb(a:bg)
+            let bg = tolower(a:bg)
+            let bg_hex = has_key(g:rgb_colors, bg) ? g:rgb_colors[bg] : a:bg
+            exec 'hi ' . a:group . ' guibg=#' . bg_hex . ' ctermbg=' . <SID>rgb(bg_hex)
         endif
         if a:attr != ''
             exec 'hi ' . a:group . ' gui=' . a:attr . ' cterm=' . a:attr
