@@ -230,19 +230,21 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
     endfun
 
     " sets the highlighting for the given group
-    fun <SID>X(group, fg, bg, attr)
+    " call <SID>X(group, fg, bg, attr), bg and attr are optional
+    fun <SID>X(group, fg, ...)
         if a:fg != ''
             let fg = tolower(a:fg)
             let fg_hex = has_key(g:rgb_colors, fg) ? g:rgb_colors[fg] : a:fg
             exec 'hi ' . a:group . ' guifg=#' . fg_hex . ' ctermfg=' . <SID>rgb(fg_hex)
         endif
-        if a:bg != ''
-            let bg = tolower(a:bg)
-            let bg_hex = has_key(g:rgb_colors, bg) ? g:rgb_colors[bg] : a:bg
+        if a:0 > 0 && a:1 != ''
+            let bg = tolower(a:1)
+            let bg_hex = has_key(g:rgb_colors, bg) ? g:rgb_colors[bg] : bg
             exec 'hi ' . a:group . ' guibg=#' . bg_hex . ' ctermbg=' . <SID>rgb(bg_hex)
         endif
-        if a:attr != ''
-            exec 'hi ' . a:group . ' gui=' . a:attr . ' cterm=' . a:attr
+        if a:0 > 1 && a:2 != ''
+            let attr = a:2
+            exec 'hi ' . a:group . ' gui=' . attr . ' cterm=' . attr
         endif
     endfun
     " }}}
@@ -342,4 +344,4 @@ else
     hi Error         cterm=bold ctermfg=7 ctermbg=1
 endif
 
-" vim: set fdl=0 fdm=marker:
+" vim: set fdl=0 fdm=marker sts=4 sw=4:
