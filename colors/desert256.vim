@@ -249,10 +249,10 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
     endfun
     " }}}
 
-    call <SID>X('Normal', 'cccccc', '000000', '')
+    call <SID>X('Normal', 'white', 'grey20')
 
     " highlight groups
-    call <SID>X('Cursor', '708090', 'f0e68c', '')
+    call <SID>X('Cursor', 'khaki', 'indianred')
     "CursorIM
     "Directory
     "DiffAdd
@@ -260,40 +260,42 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
     "DiffDelete
     "DiffText
     "ErrorMsg
-    call <SID>X('VertSplit', 'c2bfa5', '7f7f7f', 'reverse')
-    call <SID>X('Folded', 'ffd700', '4d4d4d', '')
-    call <SID>X('FoldColumn', 'd2b48c', '4d4d4d', '')
-    call <SID>X('IncSearch', '708090', 'f0e68c', '')
-    "LineNr
-    call <SID>X('ModeMsg', 'daa520', '', '')
-    call <SID>X('MoreMsg', '2e8b57', '', '')
-    call <SID>X('NonText', 'addbe7', '000000', 'bold')
-    call <SID>X('Question', '00ff7f', '', '')
-    call <SID>X('Search', 'f5deb3', 'cd853f', '')
-    call <SID>X('SpecialKey', '9acd32', '', '')
-    call <SID>X('StatusLine', 'c2bfa5', '000000', 'reverse')
-    call <SID>X('StatusLineNC', 'c2bfa5', '7f7f7f', 'reverse')
-    call <SID>X('Title', 'cd5c5c', '', '')
-    call <SID>X('Visual', '6b8e23', 'f0e68c', 'reverse')
+    call <SID>X('VertSplit', 'grey50', 'c2bfa5', 'none')
+    call <SID>X('Folded', 'orange', 'grey30')
+    call <SID>X('FoldColumn', 'tan', 'grey14')
+    call <SID>X('IncSearch', 'slategrey', 'khaki')
+    call <SID>X('LineNr', 'grey70', 'grey17')
+    call <SID>X('ModeMsg', 'goldenrod')
+    call <SID>X('MoreMsg', 'seagreen')
+    call <SID>X('NonText', 'lightblue', 'grey30', 'bold')
+    call <SID>X('Question', 'springgreen')
+    call <SID>X('Search', 'dfffdf', 'grey30')
+    call <SID>X('SpecialKey', 'yellowgreen')
+    call <SID>X('StatusLine', 'grey90', 'grey17', 'none')
+    call <SID>X('StatusLineNC', 'grey40', 'grey17', 'none')
+    call <SID>X('Title', 'indianred')
+    call <SID>X('Visual', 'khaki', 'olivedrab', 'none')
     "VisualNOS
-    call <SID>X('WarningMsg', 'fa8072', '', '')
+    call <SID>X('WarningMsg', 'salmon', '', '')
     "WildMenu
     "Menu
     "Scrollbar
     "Tooltip
+    call <SID>X('MatchParen', 'dfffdf', 'grey30')
 
     " syntax highlighting groups
-    call <SID>X('Comment', '87ceeb', '', '')
-    call <SID>X('Constant', 'ffa0a0', '', '')
-    call <SID>X('Identifier', '98fb98', '', 'none')
-    call <SID>X('Statement', 'f0e68c', '', 'bold')
-    call <SID>X('PreProc', 'cd5c5c', '', '')
-    call <SID>X('Type', 'bdb76b', '', 'bold')
-    call <SID>X('Special', 'ffdead', '', '')
+    call <SID>X('Comment', 'skyblue')
+    call <SID>X('Constant', 'ffa0a0')
+    call <SID>X('String', 'e0a5da')
+    call <SID>X('Identifier', 'palegreen', '', 'none')
+    call <SID>X('Statement', 'ffd797', '', 'bold')
+    call <SID>X('PreProc', 'indianred')
+    call <SID>X('Type', 'e9b96e', '', 'bold')
+    call <SID>X('Special', 'navajowhite')
     "Underlined
-    call <SID>X('Ignore', '666666', '', '')
+    call <SID>X('Ignore', 'grey40')
     "Error
-    call <SID>X('Todo', 'ff4500', 'eeee00', '')
+    call <SID>X('Todo', 'orangered', 'yellow2')
 
     " delete functions {{{
     delf <SID>X
