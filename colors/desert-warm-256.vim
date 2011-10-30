@@ -1,7 +1,7 @@
 " Vim color file
 " Original Author: Henry So, Jr. <henryso@panix.com>
 " Maintainer: Rainux Luo <rainux@gmail.com>
-" URL: https://github.com/rainux/vim-desert256-warm
+" URL: https://github.com/rainux/vim-desert-warm-256
 
 " It's a color scheme for Vim, based on the "desert" color scheme by Hans
 " Fugal with a few small tweaks. The tweaks are try to make it looks a bit
@@ -37,7 +37,7 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name='desert256'
+let g:colors_name='desert-warm-256'
 
 exec 'source ' . expand('<sfile>:p:h') . '/rgb_colors'
 
