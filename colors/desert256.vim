@@ -1,14 +1,18 @@
 " Vim color file
 " Original Author: Henry So, Jr. <henryso@panix.com>
 " Maintainer: Rainux Luo <rainux@gmail.com>
+" URL: https://github.com/rainux/vim-desert256-warm
 
-" These are the colors of the "desert" theme by Hans Fugal with a few small
-" modifications (namely that I lowered the intensity of the normal white and
-" made the normal and nontext backgrounds black), modified to work with 88-
-" and 256-color xterms.
+" It's a color scheme for Vim, based on the "desert" color scheme by Hans
+" Fugal with a few small tweaks. The tweaks are try to make it looks a bit
+" warm and be more friendly for my eyes. Using the code from "desert256" to
+" make the gui highlight definitions also work with 88 and 256-color xterms.
 "
 " The original "desert" theme is available as part of the vim distribution or
 " at http://hans.fugal.net/vim/colors/.
+"
+" The "desert256" theme is available at
+" http://www.vim.org/scripts/script.php?script_id=1243.
 "
 " The real feature of this color scheme, with a wink to the "inkpot" theme, is
 " the programmatic approximation of the gui colors to the palettes of 88- and
@@ -18,7 +22,11 @@
 "
 " Support rgb color names from rgb.txt file. Use a Ruby script to pre-parse
 " rgb.txt then convert color names mapping to a Vim dictionary, store it in
-" rgb_colors file.
+" colors/rgb_colors file.
+"
+" Consider use this color scheme as infrastructure to create new color
+" schemes. The benefit is your color schemes will looks nearly the same both
+" in gVim and Vim running in 256- color xterms, without any additional effort.
 
 set background=dark
 if version > 580
