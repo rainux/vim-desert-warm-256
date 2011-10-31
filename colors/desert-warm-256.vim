@@ -287,6 +287,8 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
     call <SID>X('WarningMsg', 'salmon', '', '')
     "WildMenu
     "Menu
+    call <SID>X('Pmenu', 'grey80', 'grey10')
+    call <SID>X('PmenuSel', 'grey80', 'grey25')
     "Scrollbar
     "Tooltip
     call <SID>X('MatchParen', 'dfffdf', 'grey30')
