@@ -275,7 +275,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
     call <SID>X('LineNr', 'grey70', 'grey17')
     call <SID>X('ModeMsg', 'goldenrod')
     call <SID>X('MoreMsg', 'seagreen')
-    call <SID>X('NonText', 'lightblue', 'grey30', 'bold')
+    call <SID>X('NonText', 'lightblue', 'grey14', 'bold')
     call <SID>X('Question', 'springgreen')
     call <SID>X('Search', 'dfffdf', 'grey30')
     call <SID>X('SpecialKey', 'yellowgreen')
