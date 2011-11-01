@@ -29,6 +29,13 @@ Consider use this color scheme as infrastructure to create new color
 schemes. The benefit is your color schemes will looks nearly the same both
 in gVim and Vim running in 256- color xterms, without any additional effort.
 
+Screenshots
+===========
+
+* [desert-warm-256](http://dl.dropbox.com/u/3684228/Screenshots/desert-warm-256.png)
+* [desert-warm-256 in a 256 color terminal](http://dl.dropbox.com/u/3684228/Screenshots/desert-warm-256_terminal.png)
+* [original desert](http://dl.dropbox.com/u/3684228/Screenshots/desert.png)
+
 Credits
 =======
 
